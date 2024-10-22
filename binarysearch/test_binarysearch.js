@@ -1,8 +1,6 @@
 // Imports
 import binarySearch from "./binarysearch.js";
 
-window.addEventListener("load", start);
-
 // Globale variables for test
 const values = [21, 22, 23, 25, 27, 28, 29, 31, 32, 34, 35];
 const ordliste = [
@@ -45,3 +43,5 @@ function start() {
     const personIndex = binarySearch("Ron Weasley", persons);
     console.log(`Found 'Ron Weasley' at index: ${personIndex}`);
 }
+
+start();
