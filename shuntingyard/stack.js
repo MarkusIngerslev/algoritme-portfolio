@@ -1,50 +1,53 @@
 export default class Stack {
-    head = null;
+  head = null;
 
-    constructor() {}
+  constructor() {}
 
-    push(data) {
-        const node = new Node(data);
-        if (this.head) {
-            node.next = this.head;
-        }
-
-        this.head = node;
+  push(data) {
+    const node = new Node(data);
+    if (this.head) {
+      node.next = this.head;
     }
 
-    pop() {
-        const node = this.head;
-        this.head = this.head.next;
-        return node;
-    }
+    this.head = node;
+  }
 
-    peek() {
-        return this.head;
+  pop() {
+    if (!this.head) {
+      return null;
     }
+    const node = this.head;
+    this.head = this.head.next;
+    return node;
+  }
 
-    clear() {
-        this.head = null;
-    }
+  peek() {
+    return this.head;
+  }
 
-    dumpList() {
-        if (this.head) {
-            let current = this.head;
-            let dump = "";
-            while (current) {
-                dump += current.data + " ";
-                current = current.next;
-            }
-            return dump;
-        }
+  clear() {
+    this.head = null;
+  }
+
+  dumpList() {
+    if (this.head) {
+      let current = this.head;
+      let dump = "";
+      while (current) {
+        dump += current.data + " ";
+        current = current.next;
+      }
+      return dump;
     }
+  }
 }
 
 class Node {
-    next = null;
-    data = null;
+  next = null;
+  data = null;
 
-    constructor(data, next) {
-        this.data = data;
-        this.next = next;
-    }
+  constructor(data, next) {
+    this.data = data;
+    this.next = next;
+  }
 }
